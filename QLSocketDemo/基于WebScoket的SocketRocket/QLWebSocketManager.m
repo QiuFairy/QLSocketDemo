@@ -8,6 +8,7 @@
 
 #import "QLWebSocketManager.h"
 #import "SocketRocket.h"
+#import "Header.h"
 
 #define dispatch_main_async_safe(block)\
 if ([NSThread isMainThread]) {\
@@ -15,9 +16,6 @@ block();\
 } else {\
 dispatch_async(dispatch_get_main_queue(), block);\
 }
-
-static  NSString * Khost = @"127.0.0.1";
-static const uint16_t Kport = 6969;
 
 @interface QLWebSocketManager()<SRWebSocketDelegate>{
     NSTimer *heartBeat;
@@ -47,7 +45,7 @@ static const uint16_t Kport = 6969;
     if(self.socket.readyState == SR_OPEN){
         return;
     }
-    self.socket = [[SRWebSocket alloc]initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"ws://%@:%d", Khost, Kport]]];
+    self.socket = [[SRWebSocket alloc]initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"ws://%@:%d", AddressOfServer, PortOfServer]]];
     
     self.socket.delegate = self;
     

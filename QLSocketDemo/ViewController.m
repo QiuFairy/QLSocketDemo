@@ -39,7 +39,7 @@
     UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(50, 100, 200, 44)];
     textField.backgroundColor = [UIColor whiteColor];
     textField.placeholder = @"请输入信息";
-    textField.text = @"我是你大爷";
+    textField.text = @"wybcthlnadngts";
     [bgView addSubview:textField];
     self.textField = textField;
     

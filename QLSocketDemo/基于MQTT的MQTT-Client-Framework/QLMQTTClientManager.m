@@ -147,12 +147,12 @@
 #pragma mark MQTTSessionManagerDelegate
 - (void)handleMessage:(NSData *)data onTopic:(NSString *)topic retained:(BOOL)retained {
     
-    NSArray *array = [topic componentsSeparatedByString:@"/"];
-    NSString *str = [[NSString alloc]initWithBytes:&(((UInt8 *)[data bytes])[0]) length:data.length encoding:NSUTF8StringEncoding];
-    NSDictionary *dict = [self dictionaryWithJsonString:str];
-    NSLog(@"str = %@ \n -------- dict:%@ --------- \n",str,dict);
-    
-    __weak typeof(self) weakSelf = self;
+//    NSArray *array = [topic componentsSeparatedByString:@"/"];
+//    NSString *str = [[NSString alloc]initWithBytes:&(((UInt8 *)[data bytes])[0]) length:data.length encoding:NSUTF8StringEncoding];
+//    NSDictionary *dict = [self dictionaryWithJsonString:str];
+//    NSLog(@"str = %@ \n -------- dict:%@ --------- \n",str,dict);
+//
+//    __weak typeof(self) weakSelf = self;
     //解析
     
 }
@@ -212,8 +212,8 @@
     self.cliendId = cliendId;
     self.isSSL = isSSL;
     
-    [self.mySessionManager connectTo:AddressOfMQTTServer
-                                port:self.isSSL?PortOfMQTTServerWithSSL:PortOfMQTTServer
+    [self.mySessionManager connectTo:AddressOfServer
+                                port:PortOfServer
                                  tls:self.isSSL
                            keepalive:60
                                clean:YES

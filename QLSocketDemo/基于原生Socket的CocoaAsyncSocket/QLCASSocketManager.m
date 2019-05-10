@@ -10,8 +10,7 @@
 
 #import "GCDAsyncSocket.h" // for TCP
 
-static  NSString * Khost = @"127.0.0.1";
-static const uint16_t Kport = 6969;
+#import "Header.h"
 
 @interface QLCASSocketManager()<GCDAsyncSocketDelegate>
 {
@@ -41,7 +40,7 @@ static const uint16_t Kport = 6969;
 
 //建立连接
 - (BOOL)connect{
-    return  [gcdSocket connectToHost:Khost onPort:Kport error:nil];
+    return  [gcdSocket connectToHost:AddressOfServer onPort:PortOfServer error:nil];
 }
 
 //断开连接
