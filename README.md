@@ -44,7 +44,7 @@ XMPP | XMPPFramework | 聊天协议
 
 ## Note
 
-> 仅用来研究socket，可参考
+> 仅用来研究socket，仅供参考。
 > 
 > 本文也是参考第三方文档写就。
 
